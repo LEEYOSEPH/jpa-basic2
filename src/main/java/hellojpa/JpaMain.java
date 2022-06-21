@@ -16,13 +16,6 @@ public class JpaMain {
         tx.begin();
 
         try {
-            //비영속
-            Member member = em.find(Member.class,150L);
-            member.setId(100L);
-            member.setName("helloA");
-
-            em.detach(member);
-            
 
             //실제 DB 저장
             tx.commit();
