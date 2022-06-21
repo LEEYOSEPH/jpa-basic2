@@ -16,6 +16,15 @@ public class JpaMain {
         tx.begin();
 
         try {
+            Team team = new Team();
+            team.setName("zzz");
+            em.persist(team);
+
+
+            Member member = new Member();
+            member.setTeam(team);
+            em.persist(member);
+
 
             //실제 DB 저장
             tx.commit();
