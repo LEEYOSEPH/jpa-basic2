@@ -20,10 +20,15 @@ public class JpaMain {
             team.setName("zzz");
             em.persist(team);
 
-
             Member member = new Member();
             member.setTeam(team);
             em.persist(member);
+            
+            em.flush();
+            em.clear();
+
+            Member findMember = em.find(Member.class, member.getId());
+
 
 
             //실제 DB 저장
